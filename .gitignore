@@ -41,4 +41,3 @@ yarn-error.log*
 next-env.d.ts
 
 # Heavy image sequences — DO NOT upload to GitHub
-/public/frames/
