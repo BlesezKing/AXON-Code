@@ -285,17 +285,18 @@ export default function Home() {
       <section id="stats" aria-label="Estadísticas de Axon Code" style={{ background: '#080B10', padding: '64px 0' }}>
         <div style={container}>
           <div style={{ borderRadius: '16px', padding: '1px', background: 'linear-gradient(to right, transparent, rgba(30,107,255,0.4), rgba(0,180,216,0.2), transparent)' }}>
-            <div style={{ borderRadius: '15px', padding: '40px 24px', background: 'linear-gradient(135deg, rgba(13,17,23,0.94) 0%, rgba(8,11,16,0.97) 100%)', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+            <div className="stats-grid" style={{ borderRadius: '15px', padding: '40px 24px', background: 'linear-gradient(135deg, rgba(13,17,23,0.94) 0%, rgba(8,11,16,0.97) 100%)', display: 'grid' }}>
               {stats.map((stat, idx) => (
                 <motion.div
                   key={stat.label}
                   id={`stat-${idx}`}
+                  className="stat-item"
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   custom={idx * 0.1}
                   variants={fadeIn}
-                  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '16px 8px', borderRight: idx < 3 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}
+                  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '16px 8px' }}
                 >
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, fontSize: 'clamp(2rem, 3vw, 3rem)', background: 'linear-gradient(to bottom, #1E6BFF, #00B4D8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', marginBottom: '8px' }}>
                     {stat.value}
@@ -326,7 +327,7 @@ export default function Home() {
 
           {/* Tab selector */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.1} variants={fadeIn} style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}>
-            <div role="tablist" aria-label="Fases del proceso" style={{ display: 'inline-flex', alignItems: 'center', borderRadius: '16px', padding: '6px', gap: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
+            <div role="tablist" aria-label="Fases del proceso" className="process-tablist" style={{ display: 'inline-flex', alignItems: 'center', borderRadius: '16px', padding: '6px', gap: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
               {processSteps.map((step, idx) => (
                 <button
                   key={step.number}
@@ -339,7 +340,7 @@ export default function Home() {
                     display: 'flex', alignItems: 'center', gap: '8px',
                     borderRadius: '12px', padding: '8px 18px',
                     fontSize: '14px', fontWeight: 500, fontFamily: 'DM Sans, sans-serif',
-                    cursor: 'pointer', transition: 'all 0.2s ease',
+                    cursor: 'pointer', transition: 'all 0.2s ease', whiteSpace: 'nowrap',
                     background: activeStep === idx ? 'linear-gradient(to bottom, rgba(30,107,255,0.25), rgba(30,107,255,0.1))' : 'transparent',
                     color: activeStep === idx ? '#93c5fd' : 'rgba(148,163,184,0.5)',
                     border: activeStep === idx ? '1px solid rgba(30,107,255,0.3)' : '1px solid transparent',
@@ -348,7 +349,7 @@ export default function Home() {
                   <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700, fontSize: '12px', color: activeStep === idx ? '#1E6BFF' : 'rgba(148,163,184,0.3)' }}>
                     {step.number}
                   </span>
-                  <span>{step.title}</span>
+                  <span className="process-tab-label">{step.title}</span>
                 </button>
               ))}
             </div>
@@ -365,8 +366,8 @@ export default function Home() {
             aria-labelledby={processTabIds[activeStep]}
           >
             <div style={{ borderRadius: '20px', padding: '1px', background: 'linear-gradient(135deg, rgba(30,107,255,0.4) 0%, rgba(255,255,255,0.04) 50%, rgba(0,180,216,0.2) 100%)' }}>
-              <div style={{ borderRadius: '19px', padding: '64px 48px', background: 'linear-gradient(160deg, rgba(13,17,23,0.98) 0%, rgba(8,11,16,1) 100%)', textAlign: 'center' }}>
-                <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, fontSize: '96px', lineHeight: 1, marginBottom: '16px', background: 'linear-gradient(to bottom, rgba(30,107,255,0.5), rgba(30,107,255,0.08))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <div className="process-panel" style={{ borderRadius: '19px', padding: '64px 48px', background: 'linear-gradient(160deg, rgba(13,17,23,0.98) 0%, rgba(8,11,16,1) 100%)', textAlign: 'center' }}>
+                <div className="process-panel-number" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, fontSize: '96px', lineHeight: 1, marginBottom: '16px', background: 'linear-gradient(to bottom, rgba(30,107,255,0.5), rgba(30,107,255,0.08))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   {processSteps[activeStep].number}
                 </div>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'rgba(148,163,184,0.4)', marginBottom: '12px' }}>

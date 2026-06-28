@@ -117,8 +117,7 @@ export default function HeroCanvas() {
   return (
     <div
       ref={containerRef}
-      className="relative"
-      style={{ height: '900vh' }}
+      className="relative hero-scroll-container"
       id="hero-canvas-container"
     >
       {/* Sticky viewport */}

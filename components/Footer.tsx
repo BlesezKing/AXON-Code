@@ -92,10 +92,10 @@ export default function Footer() {
       <div style={{ ...containerStyle, paddingTop: '56px', paddingBottom: '56px' }}>
 
         {/* Main grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px', marginBottom: '48px' }}>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px', marginBottom: '48px' }}>
 
           {/* Brand column — spans 4 of 12 */}
-          <div style={{ gridColumn: 'span 4' }}>
+          <div className="footer-brand-col" style={{ gridColumn: 'span 4' }}>
             {/* Logo */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
               <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -167,7 +167,7 @@ export default function Footer() {
 
           {/* Link columns — each spans 2 of 12 */}
           {columns.map((col) => (
-            <div key={col.title} style={{ gridColumn: 'span 2' }}>
+            <div key={col.title} className="footer-link-col" style={{ gridColumn: 'span 2' }}>
               <h4 style={{
                 fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: '11px',
                 textTransform: 'uppercase', letterSpacing: '0.12em',
