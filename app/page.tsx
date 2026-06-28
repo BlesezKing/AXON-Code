@@ -5,6 +5,7 @@ import { motion, type Variants } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import HeroCanvas from '@/components/HeroCanvas';
 import Footer from '@/components/Footer';
+import ContactCTA from '@/components/ContactCTA';
 
 /* ─── Inline style constants ─────────────────────────────────────── */
 const container: React.CSSProperties = {
@@ -504,6 +505,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <ContactCTA />
     </main>
   );
 }
