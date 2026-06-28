@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
+  --color-background: #080B10;
+  --color-primary: #1E6BFF;
+  --color-primary-light: #00B4D8;
+  --color-dark: #0D1117;
+  --color-muted: #94A3B8;
+}
+
+:root {
+  --bg: #080B10;
+  --primary: #1E6BFF;
+  --primary-light: #00B4D8;
+  --text: #FFFFFF;
+  --muted: #94A3B8;
+  --dark: #0D1117;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Hide scrollbar cross-browser */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-dm-sans {
+  font-family: 'DM Sans', sans-serif;
+}
