@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import HeroCanvas from '@/components/HeroCanvas';
 import Footer from '@/components/Footer';
@@ -19,7 +19,7 @@ const container: React.CSSProperties = {
 };
 
 /* ─── Animation variants ─────────────────────────────────────────── */
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 32 },
   visible: (delay: number) => ({
     opacity: 1,
@@ -28,7 +28,7 @@ const fadeUp = {
   }),
 };
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: (delay: number) => ({
     opacity: 1,
